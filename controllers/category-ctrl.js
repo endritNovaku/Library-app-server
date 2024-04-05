@@ -1,7 +1,7 @@
 const Category = require('../models/category-model');
 const { MongoClient } = require("mongodb");
 
-const uri = 'mongodb+srv://goose:1fantastiku2@cluster0.a8mfa.mongodb.net/Library?retryWrites=true&w=majority'
+const uri = 'mongodb+srv://goose:1fantastiku2@cluster0.gnyj584.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0'
 
 const books = new MongoClient(uri);
 
@@ -14,7 +14,7 @@ createCategory = (req, res) => {
     async function run() {
         try {
           await books.connect();
-          const db = books.db('Library');
+          const db = books.db('test');
             const coll = db.collection('books')
             const course = coll.find()
             await course.forEach(element => {
